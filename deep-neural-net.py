@@ -42,5 +42,8 @@ def neural_network_model(data):
 
 	return output
 
+def train_neural_network(x): #x is input
+	prediction = neural_network_model(x)
+	cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(prediction,y))
 
-
+	optimizer = tf.train.AdamOptimizer().minimize(cost) #default learning rate is 0.001
