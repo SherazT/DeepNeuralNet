@@ -7,3 +7,4 @@ result = tf.mul(x1,x2)
 
 with tf.Session() as sess:
 	print(sess.run(result))
+	
