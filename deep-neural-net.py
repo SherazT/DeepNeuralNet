@@ -30,7 +30,7 @@ def neural_network_model(data):
 					  'biases': tf.Variable(tf.random_normal(n_classes))}
 
 	layer1 = tf.add(tf.matmul(data, hidden_layer_1['weights']) + hidden_layer_1['biases'])
-	layer1 = tf.nn.relu(layer1)
+	layer1 = tf.nn.relu(layer1) 	#relu is activation function
 
 	layer2 = tf.add(tf.matmul(layer1, hidden_layer_2['weights']) + hidden_layer_2['biases'])
 	layer2 = tf.nn.relu(layer2)
