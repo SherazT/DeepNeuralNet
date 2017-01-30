@@ -60,10 +60,9 @@ def train_neural_network(x):
 				_, cost_1 = sess.run([optimizer, cost], feed_dict = {x: _x, y: _y})
 				epoch_loss += cost_1
 			print('Epoch', epoch, 'out of ', no_of_epochs, 'loss: ', epoch_loss)
-
-	correct = tf.equal(tf.argmax(prediction, 1), tf.argmax(y,1))
-	accuracy = tf.reduce_mean(tf.cast(correct, 'float'))
-	print('Accuracy:',accuracy.eval({x:mnist.test.images, y:mnist.test.labels}))
+		correct = tf.equal(tf.argmax(prediction, 1), tf.argmax(y,1))
+		accuracy = tf.reduce_mean(tf.cast(correct, 'float'))
+		print('Accuracy:',accuracy.eval({x:mnist.test.images, y:mnist.test.labels}, session=sess))
 
 train_neural_network(x)
 
